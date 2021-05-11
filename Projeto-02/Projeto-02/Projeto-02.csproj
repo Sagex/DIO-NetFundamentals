@@ -6,8 +6,4 @@
     <RootNamespace>Projeto_02</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>

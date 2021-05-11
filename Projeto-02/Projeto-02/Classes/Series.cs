@@ -12,6 +12,7 @@ namespace Projeto_02
         private string _titulo {get; set; }
         private string _descricao { get; set; }
         private int _ano { get; set; }
+        private bool _excluido { get; set; }
 
         public Series(int id, Genero genero, string titulo, string descricao, int ano)
         {
@@ -20,6 +21,7 @@ namespace Projeto_02
             this._titulo = titulo;
             this._descricao = descricao;
             this._ano = ano;
+            this._excluido = false;
         }
 
         public override string ToString()
@@ -32,6 +34,7 @@ namespace Projeto_02
             retorno += "Titulo: " + this._titulo + Environment.NewLine;
             retorno += "Descricao " + this._descricao + Environment.NewLine;
             retorno += "Ano: " + this._ano + Environment.NewLine;
+            retorno += $"Excluido: {this._excluido}";
 
             return retorno;
         }
@@ -44,6 +47,16 @@ namespace Projeto_02
         public int RetornarID()
         {
             return this.Id;
+        }
+
+        public bool RetornaDeleteEstado()
+        {
+            return this._excluido;
+        }
+
+        public void Delete()
+        {
+            this._excluido = true;
         }
     }
 }
